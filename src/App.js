@@ -1,11 +1,22 @@
 import "./App.css";
+import store from "./store";
+import SharedForm from "./sharedForm";
 
 function App() {
+  const state = store.getState();
+
+  const addProduct = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>hello fran</p>
-      </header>
+      <SharedForm></SharedForm>
+      <ul>
+        {state.map((product) => {
+          return <li key={product.id}>{product.description}</li>;
+        })}
+      </ul>
     </div>
   );
 }
