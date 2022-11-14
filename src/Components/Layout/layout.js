@@ -1,18 +1,16 @@
-import React from 'react';
-import styles from './layout.module.css';
+import React from "react";
+import Footer from "../Footer/index.js";
+import Header from "../Header/index.js";
+import styles from "./layout.module.css";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
     <div>
-        <header className={styles.header}>
-            <h1 className={styles.title}>MCGA 2022 - Parcial 2</h1>
-        </header>
-        {children}
-        <footer>
-            <label>Astudillo Julian, Paladini Franco</label>
-        </footer>
+      <Header></Header>
+      {children}
+      <Footer></Footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

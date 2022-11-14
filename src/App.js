@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Routes } from 'react-router-dom';
 import "./App.css";
 import Layout from "./components/Layout/layout.js";
+
+
 import Products from './screens/products';
 import Test from './screens/test';
 
@@ -24,6 +26,7 @@ function App() {
       </Routes>
     </Layout>
   );
+
 }
 
 export default App;
