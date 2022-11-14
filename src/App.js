@@ -1,21 +1,8 @@
 import "./App.css";
-import Layout from "./Components/Layout/layout.js";
-
-import store from "./store";
-import SharedForm from "./sharedForm";
-
+import Layout from "./components/Layout/layout.js";
 
 function App() {
-  const state = store.getState();
-
-  const addProduct = (e) => {
-    e.preventDefault();
-  };
-
-  return (
-    <Layout>
-    </Layout>
-  );
+  return <Layout></Layout>;
 }
 
 export default App;
