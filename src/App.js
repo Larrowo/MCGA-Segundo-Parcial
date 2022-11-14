@@ -1,6 +1,9 @@
 import "./App.css";
+import Layout from "./Components/Layout/layout.js";
+
 import store from "./store";
 import SharedForm from "./sharedForm";
+
 
 function App() {
   const state = store.getState();
@@ -10,14 +13,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <SharedForm></SharedForm>
-      <ul>
-        {state.map((product) => {
-          return <li key={product.id}>{product.description}</li>;
-        })}
-      </ul>
-    </div>
+    <Layout>
+    </Layout>
   );
 }
 
