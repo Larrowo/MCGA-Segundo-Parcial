@@ -56,7 +56,7 @@ export const deleteProductSuccess = (data) => {
     payload: data,
   };
 };
-export const deleteProductsLoading = () => {
+export const deleteProductLoading = () => {
   return {
     type: DELETE_PRODUCT_LOADING,
   };

@@ -17,7 +17,9 @@ export const getProducts = () => {
   return async (dispatch) => {
     dispatch(getProductLoading());
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/products`
+      );
       const json = await response.json();
       dispatch(getProductSuccess(json.data));
     } catch (error) {
