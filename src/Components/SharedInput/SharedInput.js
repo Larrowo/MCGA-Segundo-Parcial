@@ -1,18 +1,23 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import styles from "./sharedInput.module.css"
 
-function SharedInput({ type,placeholder,name }) {
-  const {
-      register
-  } = useForm();
-
-  return (
-      <input
-          {...register(`${name}`)}
-          name={name} 
-          type={type} 
-          placeholder={placeholder} />
-      );
-}
+const SharedInput = ({ name, label, register, errors, required, type, validationSchema }) => (  <div className="form-control-input">
+    <label htmlFor={name}>
+      {label}
+      {required && "*"}
+    </label>
+    <input
+      id={name}
+      name={name}
+      type={type}
+      {...register(name, validationSchema)}
+    />
+    {errors && errors[name]?.type === "required" && (
+      <span className="error">{errors[name]?.message}</span>
+    )}
+    {errors && errors[name]?.type === "minLength" && (
+      <span className="error">{errors[name]?.message}</span>
+    )}
+  </div>);
 
 export default SharedInput;
